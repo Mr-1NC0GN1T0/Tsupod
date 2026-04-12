@@ -1,3 +1,6 @@
+//file header for Song class
+
+
 #ifndef SONG_H
 #define SONG_H
 
@@ -25,4 +28,4 @@ public:
     bool operator>(const Song& s) const;
 };
 
-endif // SONG_H
+#endif // SONG_H
