@@ -1,3 +1,6 @@
+#ifndef SONG_H
+#define SONG_H
+
 #include <string>
 
 using namespace std;
@@ -21,3 +24,5 @@ public:
     bool operator<(const Song& s) const;
     bool operator>(const Song& s) const;
 };
+
+endif // SONG_H
