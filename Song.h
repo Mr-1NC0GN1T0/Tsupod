@@ -18,15 +18,6 @@ public:
     int getSize() const;
 
     bool operator==(const Song& s) const;
+    bool operator<(const Song& s) const;
+    bool operator>(const Song& s) const;
 };
-
-Sstring title;
-string artist;
-int size;/* args */)
-{
-}string title;
-string artist;
-int size;)
-string title;
-string artist;
-int size;
