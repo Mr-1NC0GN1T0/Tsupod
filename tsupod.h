@@ -1,18 +1,24 @@
+
+#ifndef TSUPOD_H
+#define TSUPOD_H
+
+#include "Song.h"
+
 struct Node
 {
     Song song;
     Node* next;
 };
 
-class Tsupod
+class TsuPod
 {
 private:
     Node* head;
     int maxMemory;
     int usedSize;
 public:
-    Tsupod(int memory);
-    ~Tsupod();
+    TsuPod(int memory);
+    ~TsuPod();
 
     int addSong(const Song& s);
     int removeSong(const Song& s);
@@ -24,3 +30,5 @@ public:
     int getRemainingMemory() const;
 
 };
+
+#endif // TSUPOD_H
