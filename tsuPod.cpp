@@ -41,3 +41,27 @@ int TsuPod::addSong(const Song& s){
     return 0;    
     
 }
+
+int TsuPod::removeSong(const Song& s){
+    Node* current = head;
+    Node* previous = nullptr;
+    while(current!=nullptr){
+        if(current->song == s){
+            if (previous == nullptr)
+            {
+                head = current->next;
+            }
+            if (previous != nullptr)
+            {
+                previous->next = current->next;
+            }
+            usedMemory -= s.getSize();
+            delete current;
+            return 0;
+        }
+        previous = current;
+        current = current->next;
+    }
+    return -1;
+    
+}
