@@ -1,14 +1,20 @@
 #include "tsuPod.h"
 #include <iostream>
 
+
+//initializing 
 TsuPod::TsuPod(int memory) {
     head = nullptr;
     maxMemory = memory;
     usedMemory = 0;
 }
+
+// calling clearsongList 
 TsuPod::~TsuPod() {
     clearSongList(); 
 }
+
+//adding the song while checking if inputs are valid
 int TsuPod::addSong(const Song& s){
     if (
         s.getTitle() == "" || s.getArtist() =="" || s.getSize() <= 0
@@ -22,13 +28,16 @@ int TsuPod::addSong(const Song& s){
         return -1;
     }
 
+    //use Linked lists to add songs to the list
     Node* newNode = new Node();
     newNode->song = s;
     newNode->next = nullptr;
     newNode->next = head;
     head = newNode;
-    
-    
-    
+
+    //update memory
+    usedMemory += s.getSize();
+
+    return 0;    
     
 }
