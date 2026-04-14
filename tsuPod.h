@@ -15,7 +15,7 @@ class TsuPod
 private:
     Node* head;
     int maxMemory;
-    int usedSize;
+    int usedMemory;
 public:
     TsuPod(int memory);
     ~TsuPod();
