@@ -65,3 +65,16 @@ int TsuPod::removeSong(const Song& s){
     return -1;
     
 }
+
+void TsuPod::clearSongList(){
+    Node* current = head;
+    while (current!=nullptr)
+    {
+        Node* temp = current->next;
+        delete current;
+        current = temp;
+    }
+    head = nullptr;
+    usedMemory = 0;
+    
+}
