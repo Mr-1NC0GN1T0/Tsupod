@@ -1,5 +1,6 @@
 #include "tsuPod.h"
 #include <iostream>
+#include <ctime>
 
 
 //initializing 
@@ -117,5 +118,40 @@ void TsuPod::sortSongList(){
             previous = current;
             current = current->next;
         }
+    }
+}
+
+void TsuPod::shuffle(){
+    int count = 0;
+    Node* temp = head;
+
+    //counting the number of songs
+    while (temp != nullptr)
+    {
+        count++;
+        temp = temp->next;
+    }
+
+    if (count < 2) return;
+
+    //random number generator
+    srand(time(0));
+
+    Node* current = head;
+    while (current != nullptr)
+    {
+        // get a random node
+        int r = rand() % count;
+        Node* target = head;
+        for (int i = 0; i < r; i++)
+        {
+            target = target->next;
+        }
+
+        Song temp = current->song;
+        current->song = target->song;
+        target->song = temp;
+
+        current = current->next;
     }
 }
