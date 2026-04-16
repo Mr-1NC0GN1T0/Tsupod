@@ -1,5 +1,6 @@
 #include "Song.h"
 
+// setters
 void Song::setTitle(string newTitle) {
     title = newTitle;
 }
@@ -10,6 +11,7 @@ void Song::setSize(int newSize) {
     size = newSize;
 }
 
+// getters
 string Song::getTitle() const {
     return title;
 }
@@ -20,6 +22,7 @@ int Song::getSize() const {
     return size;
 }
 
+// equal if all three fields match
 bool Song::operator==(const Song& s) const {
     if (title == s.title && artist == s.artist && size == s.size){
         return true;
@@ -29,6 +32,7 @@ bool Song::operator==(const Song& s) const {
     }
 }
 
+// compare by title, then artist, then size
 bool Song::operator<(const Song& s) const {
     if (title < s.title) {
         return true;
