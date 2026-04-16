@@ -84,7 +84,7 @@ void TsuPod::showSongList() const {
     Node* current = head;
     while (current!=nullptr)
     {
-        cout << current->song.getTitle() << current->song.getArtist() << current->song.getSize() << endl;
+        cout << current->song.getTitle() << " | " << current->song.getArtist() << " | " << current->song.getSize() << "MB" << endl;
         current = current->next;
     }
     
