@@ -78,3 +78,44 @@ void TsuPod::clearSongList(){
     usedMemory = 0;
     
 }
+
+void TsuPod::showSongList() const {
+    Node* current = head;
+    while (current!=nullptr)
+    {
+        cout << current->song.getTitle() << current->song.getArtist() << current->song.getSize() << endl;
+        current = current->next;
+    }
+    
+}
+
+int TsuPod::getTotalMemory() const {
+    return maxMemory;
+}
+
+int TsuPod::getRemainingMemory()const {
+    return maxMemory - usedMemory;
+}
+
+void TsuPod::sortSongList(){
+
+    bool swapped = true;
+    while (swapped)
+    {
+        swapped = false;
+        Node* previous = head;
+        Node* current = previous->next;
+        while (current!=nullptr)
+        {
+            if (previous->song > current->song)
+            {
+                Song temp = previous->song;
+                previous->song = current->song;
+                current->song = temp;
+                swapped = true;
+            }
+            previous = current;
+            current = current->next;
+        }
+    }
+}
